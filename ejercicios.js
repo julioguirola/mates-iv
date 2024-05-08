@@ -1,8 +1,14 @@
 const potencia = Math.pow
 const sen = Math.sin
+const ln = Math.log
+const cos = Math.cos
 
 export function ejemploPrimeraClase (x) {
     return potencia(x, 2) - 2
+}
+
+export function deriv_ejmploPrimeraClase (x) {
+    return 2 * x
 }
 
 export function ejDiezTareaUno (x) {
@@ -11,4 +17,24 @@ export function ejDiezTareaUno (x) {
 
 export function ejCuatroTareaUno (x) {
     return potencia(x, 2) * sen(x)
+}
+
+export function clase_dos (x) {
+    return sen(x) - ln(x)
+}
+
+export function ejemp_conf (x) {
+    return cos(x) - x
+}
+
+export function ejmpNR (x) {
+    return potencia(x,3) - 3 * potencia(x,2) - 3 * x - 1
+}
+
+export function deriv_ejmpNR (x) {
+    return 3 * potencia(x,2) - 6 * x - 3
+}
+
+export function ejm_sec (x) {
+    return potencia(x,3) - 3 * potencia(x,2) - 3 * x - 1
 }
