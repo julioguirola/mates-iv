@@ -38,3 +38,20 @@ export function deriv_ejmpNR (x) {
 export function ejm_sec (x) {
     return potencia(x,3) - 3 * potencia(x,2) - 3 * x - 1
 }
+
+export function ej_17_tarea_1 (x) {
+    return potencia(x,4) + 4 * potencia(x,3) - 5 * x - 1
+}
+
+export function ej_17_tarea_1_d (x) {
+    return 4 * potencia(x,3) + 12 * potencia(x,2) - 5
+}
+
+export function carla (x) {
+    return potencia(x,4) - 4 * potencia(x,3) + 5 * x + 1
+}
+
+export function carla_d (x) {
+    return 4 * potencia(x,3) - 12 * potencia(x,2) + 5
+}
+

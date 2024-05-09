@@ -9,7 +9,13 @@ export function biseccion (funcion, a, b, err) {
     do {
         med = (a + b) / 2
         err_act = modulo(b-a)/2
-        poner_en_la_tabla(cant_iteraciones, "a: ", a, "b: ", b, "pm: ", med, "error: ", err_act)
+        poner_en_la_tabla(
+            cant_iteraciones,
+            "a: ", a,
+            "b: ", b,
+            "pm: ", med,
+            "error: ", err_act
+        )
         if (err_act < err) return med
         if ((funcion(med) > 0) == (funcion(a) > 0)) {
             a = med
@@ -29,9 +35,8 @@ export function falsa_pos (funcion, a, b, err) {
     do {
         x = a - (b - a)/(funcion(b) - funcion(a)) * funcion(a)
         err_act = modulo(x - x_ant)
-        if (err_act < err) return x_ant
         poner_en_la_tabla(cant_iteraciones, "a: ", a, "b: ", b, "x: ", x, "err: ", err_act)
-        
+        if (err_act < err) return x
         cant_iteraciones++;
         x_ant = x
 
@@ -51,8 +56,8 @@ export function newton_raphson (funcion, funcion_deriv, x, err) {
     do {
         x = x_ant - funcion(x_ant)/funcion_deriv(x_ant)
         err_act = modulo(x - x_ant)
-        if (err_act < err) return x_ant
         poner_en_la_tabla(cant_iteraciones, "x: ", x, "err: ", err_act)
+        if (err_act < err) return x
         
         cant_iteraciones++;
         x_ant = x
@@ -67,8 +72,8 @@ export function secante (funcion, x_1, x_0, err) {
     do {
         x = x_1 - (x_1 - x_0)/(funcion(x_1) - funcion(x_0)) * funcion(x_1)
         err_act = modulo(x - x_1)
-        if (err_act < err) return x_0
         poner_en_la_tabla(cant_iteraciones, "x: ", x, "err: ", err_act)
+        if (err_act < err) return x
         
         cant_iteraciones++;
         x_1 = x_0
