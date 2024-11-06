@@ -1,1 +1,1 @@
-# Algunos metodos numericos
+# Algunos métodos numéricos
